@@ -26,13 +26,15 @@ body{background:var(--desk);color:var(--ink);font:16px/1.6 var(--sans);
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--seal);outline-offset:3px}
-.desk{max-width:980px;margin:0 auto;padding-block:28px 64px;display:grid;gap:56px}
+.desk{max-width:980px;margin:0 auto;padding-block:14px 64px;display:grid;gap:56px}
 .sheet{background:var(--paper);box-shadow:0 1px 0 rgba(0,0,0,.25),0 24px 50px rgba(0,0,0,.35)}
 .eyebrow{font:500 .72rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
 h2{font:400 clamp(2rem,4.4vw,2.8rem)/1.05 var(--serif);margin:6px 0 0;text-wrap:balance}
 
-/* top nav on the desk */
-.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;color:var(--desk-text);font-size:.9rem}
+/* sticky top nav */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:16;background:var(--desk)}
+section[id]{scroll-margin-top:72px}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:15;padding-block:14px;margin-inline:-8px;padding-inline:8px;background:rgba(38,42,49,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid #353A44;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;color:var(--desk-text);font-size:.9rem}
 .nav nav{display:flex;gap:20px;flex-wrap:wrap}
 .nav a{text-decoration:none} .nav a:hover{color:#fff}
 
@@ -112,35 +114,14 @@ footer{color:var(--desk-text);font:500 .78rem var(--mono);display:flex;justify-c
 }
 @media (prefers-reduced-motion:reduce){.flip .inner{transition:none}}
 
-/* floating contact */
-.fab{position:fixed;right:max(20px,calc(env(safe-area-inset-right,0px) + 16px));bottom:max(20px,calc(env(safe-area-inset-bottom,0px) + 16px));z-index:20;display:grid;justify-items:end;gap:12px}
-.fab-btn{display:flex;align-items:center;gap:10px;background:var(--seal);color:var(--paper);border:0;padding:13px 20px 13px 16px;border-radius:999px;font:600 .95rem var(--sans);cursor:pointer;box-shadow:0 10px 28px rgba(0,0,0,.45)}
-.fab-btn svg{width:18px;height:18px}
-.fab-btn:hover{filter:brightness(1.08)}
-.panel{background:var(--paper);color:var(--ink);width:300px;padding:14px 16px;box-shadow:0 20px 50px rgba(0,0,0,.5);display:grid;gap:4px}
-.panel .ph{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
-.panel .ph b{font:400 1.2rem var(--serif)}
-.panel .x{background:none;border:0;font-size:1.3rem;line-height:1;cursor:pointer;color:var(--ink-2);padding:4px 8px}
-.pr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:0 10px;align-items:center;padding:7px 0;border-top:1px solid var(--rule)}
-.pr small{grid-column:1/-1;font:500 .68rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
-.pr a{font-size:.92rem;text-decoration:none;word-break:break-all}
-.pr a:hover{color:var(--seal)}
-.pr .cp{font:500 .72rem var(--mono);background:transparent;border:1px solid var(--rule);color:var(--ink);padding:4px 9px;cursor:pointer}
-.pr .cp:hover{border-color:var(--seal);color:var(--seal)}
-@media (prefers-reduced-motion:no-preference){.panel{animation:pop .18s ease-out}@keyframes pop{from{opacity:0;transform:translateY(8px)}}}
+/* floating contact: three icon buttons */
+.fab{position:fixed;right:max(18px,calc(env(safe-area-inset-right,0px) + 14px));bottom:max(18px,calc(env(safe-area-inset-bottom,0px) + 14px));z-index:20;display:grid;gap:10px}
+.ic{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:var(--seal);color:var(--paper);box-shadow:0 8px 22px rgba(0,0,0,.45);text-decoration:none}
+.ic svg{width:22px;height:22px}
+.ic:hover{filter:brightness(1.1)}
+@media (prefers-reduced-motion:no-preference){.ic{transition:transform .15s}.ic:hover{transform:translateY(-2px)}}
 .nav .home{text-decoration:none;color:var(--paper);font-weight:500}
-.desk{padding-bottom:120px}
-/* phones: the panel becomes a compact bar pinned to the bottom */
-@media (max-width:760px){
-  .fab{left:0;right:0;bottom:0;justify-items:stretch}
-  .panel{width:auto;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;padding:8px max(12px,env(safe-area-inset-right,0px)) calc(8px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));box-shadow:0 -8px 24px rgba(0,0,0,.35)}
-  .panel .ph{display:none}
-  .pr{grid-template-columns:1fr;text-align:center;border-top:0;border-left:1px solid var(--rule);padding:4px 6px}
-  .pr:nth-child(2){border-left:0}
-  .pr a{font-size:.74rem;line-height:1.3;word-break:break-all}
-  .pr .cp{margin-top:4px;justify-self:center;padding:2px 8px}
-  .desk{padding-bottom:140px}
-}
+.desk{padding-bottom:90px}
 </style>
 </head>
 <body style="margin:0">
@@ -227,7 +208,7 @@ footer{color:var(--desk-text);font:500 .78rem var(--mono);display:flex;justify-c
   <section class="sheet contact" id="contact">
     <div><span class="eyebrow">Contact</span><h2>Have a release that needs a second pair of eyes?</h2></div>
     <div class="rows">
-      <div class="r"><small>Email</small><span id="em">work.savanb@gmail.com</span><button class="copy" id="copy-email">Copy</button></div>
+      <div class="r"><small>Email</small><span id="em">work.savanb@gmail.com</span><a class="copy" href="mailto:work.savanb@gmail.com" style="text-decoration:none">Send</a></div>
       <div class="r"><small>Phone</small><span>+91 88493 93193</span></div>
       <div class="r"><small>LinkedIn</small><a href="https://www.linkedin.com/in/savanb/" target="_blank" rel="noopener">linkedin.com/in/savanb</a></div>
       <div class="r"><small>Based in</small><span>Ahmedabad, Gujarat · open to remote</span></div>
@@ -237,31 +218,18 @@ footer{color:var(--desk-text);font:500 .78rem var(--mono);display:flex;justify-c
   <footer><span>© 2026 Savan Balasara</span><span>MCA · BCA · English, Hindi, Gujarati</span></footer>
 </div>
 
-<div class="fab">
-  <aside class="panel" id="contact-panel" aria-label="Contact Savan">
-    <div class="ph"><b>Contact</b></div>
-    <div class="pr"><small>Email</small><a href="mailto:work.savanb@gmail.com">work.savanb@gmail.com</a><button class="cp" data-t="work.savanb@gmail.com">Copy</button></div>
-    <div class="pr"><small>Phone</small><a href="tel:+918849393193">+91 88493 93193</a><button class="cp" data-t="+91 88493 93193">Copy</button></div>
-    <div class="pr"><small>LinkedIn</small><a href="https://www.linkedin.com/in/savanb/" target="_blank" rel="noopener">linkedin.com/in/savanb</a><button class="cp" data-t="https://www.linkedin.com/in/savanb/">Copy</button></div>
-  </aside>
-</div>
+<nav class="fab" aria-label="Contact shortcuts">
+  <a class="ic" href="mailto:work.savanb@gmail.com" aria-label="Email Savan" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+  <a class="ic" href="tel:+918849393193" aria-label="Call Savan" title="Call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg></a>
+  <a class="ic" href="https://www.linkedin.com/in/savanb/" target="_blank" rel="noopener" aria-label="Savan on LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21h-4z"/></svg></a>
+</nav>
 
 <script>
 const card=document.getElementById('card');
 const turn=()=>card.setAttribute('aria-pressed',card.getAttribute('aria-pressed')!=='true');
 card.addEventListener('click',turn);
 card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();turn()}});
-const btn=document.getElementById('copy-email');
-btn.addEventListener('click',()=>{
-  const done=t=>{btn.textContent=t;setTimeout(()=>btn.textContent='Copy',1500)};
-  const sel=()=>{const r=document.createRange();r.selectNodeContents(document.getElementById('em'));const s=getSelection();s.removeAllRanges();s.addRange(r);done('Selected')};
-  try{navigator.clipboard.writeText('work.savanb@gmail.com').then(()=>done('Copied'),sel)}catch(e){sel()}
-});
 
-document.querySelectorAll('.pr .cp').forEach(b=>b.addEventListener('click',()=>{
-  const t=b.dataset.t,ok=m=>{b.textContent=m;setTimeout(()=>b.textContent='Copy',1500)};
-  try{navigator.clipboard.writeText(t).then(()=>ok('Copied'),()=>ok('Select'))}catch(e){ok('Select')}
-}));
 </script>
 </body>
 </html>
