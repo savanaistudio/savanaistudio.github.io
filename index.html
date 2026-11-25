@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Savan Balasara, Senior Quality Analyst in Ahmedabad. 5.5+ years testing web, mobile and API products across SaaS, retail POS, FinTech and EdTech.">
+<meta property="og:title" content="Savan Balasara, Senior Quality Analyst">
+<meta property="og:description" content="QA for web, Android, iOS and APIs. Open to Senior QA roles.">
+<title>Savan Balasara</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a desk. Every section is a printed card on it, starting with the business card. Single committed look (dark desk, paper cards). */
+:root{
+  --desk:#262A31; --desk-dot:#333842; --desk-text:#B9BFC8;
+  --paper:#F7F5F0; --paper-2:#EEEBE3; --ink:#1B1D21; --ink-2:#62666D; --rule:#DCD8CE;
+  --seal:#A8432C;
+  --serif:"Instrument Serif", Georgia, "Times New Roman", serif;
+  --sans:"DM Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono:"DM Mono", ui-monospace, Menlo, monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--desk);color:var(--ink);font:16px/1.6 var(--sans);
+  background-image:radial-gradient(var(--desk-dot) 1px,transparent 1px);background-size:14px 14px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--seal);outline-offset:3px}
+.desk{max-width:980px;margin:0 auto;padding-block:28px 64px;display:grid;gap:56px}
+.sheet{background:var(--paper);box-shadow:0 1px 0 rgba(0,0,0,.25),0 24px 50px rgba(0,0,0,.35)}
+.eyebrow{font:500 .72rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+h2{font:400 clamp(2rem,4.4vw,2.8rem)/1.05 var(--serif);margin:6px 0 0;text-wrap:balance}
+
+/* top nav on the desk */
+.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;color:var(--desk-text);font-size:.9rem}
+.nav nav{display:flex;gap:20px;flex-wrap:wrap}
+.nav a{text-decoration:none} .nav a:hover{color:#fff}
+
+/* hero: the business card, flips on click */
+.hero{display:grid;justify-items:center;gap:18px;padding-block:40px 8px}
+.flip{display:block;width:min(600px,100%);aspect-ratio:1.75/1;perspective:1600px;cursor:pointer;color:var(--ink);text-align:left}
+.flip .inner{display:block;position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.flip[aria-pressed="true"] .inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--paper);box-shadow:0 1px 0 rgba(0,0,0,.25),0 30px 60px rgba(0,0,0,.45);padding:clamp(22px,5vw,40px);display:flex;flex-direction:column;justify-content:space-between}
+.front .nm{display:block;font:400 clamp(2.2rem,7vw,3.4rem)/1 var(--serif);margin:0}
+.front .role{display:block;color:var(--ink-2);margin-top:8px;font-size:1.05rem}
+.front .bt{display:flex;justify-content:space-between;align-items:end;gap:14px;font-size:.9rem;line-height:1.55}
+.seal{width:52px;height:52px;border-radius:50%;background:var(--seal);color:var(--paper);display:grid;place-items:center;font:italic 400 1.2rem var(--serif);flex:none}
+.back{transform:rotateY(180deg);background:var(--seal);color:var(--paper)}
+.back p{font:400 clamp(1.4rem,3.6vw,2rem)/1.2 var(--serif);margin:0;max-width:20ch}
+.back .meta{font:500 .8rem var(--mono);letter-spacing:.06em;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.hint{color:var(--desk-text);font-size:.85rem}
+
+/* about: wide sheet */
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:40px;padding:clamp(24px,5vw,48px)}
+.about p.big{font:400 clamp(1.3rem,2.6vw,1.65rem)/1.35 var(--serif);margin:0 0 16px}
+.about p{margin:0 0 12px;color:#3B3E44}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:22px}
+.facts div{background:var(--paper);padding:12px 14px}
+.facts b{display:block;font:400 1.6rem/1.1 var(--serif)}
+.facts span{font-size:.82rem;color:var(--ink-2)}
+
+/* experience: a stack of cards, each slightly offset */
+.stack{display:grid;gap:18px}
+.stack .head{color:var(--paper)}
+.stack .head .eyebrow{color:var(--desk-text)}
+.job{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 24px;padding:24px clamp(20px,4vw,34px)}
+.job:nth-of-type(odd){margin-right:clamp(0px,4vw,40px)}
+.job:nth-of-type(even){margin-left:clamp(0px,4vw,40px)}
+.job h3{font:400 1.6rem/1.15 var(--serif);margin:0}
+.job .co{color:var(--ink-2);margin:0}
+.job .when{font:500 .8rem var(--mono);color:var(--ink-2);text-align:right;white-space:nowrap}
+.job ul{grid-column:1/-1;margin:12px 0 0;padding-left:1.1em;color:#3B3E44}
+.job li{margin:3px 0} .job li::marker{color:var(--seal)}
+
+/* case studies: smaller cards in a grid */
+.cases-head{color:var(--paper)} .cases-head .eyebrow{color:var(--desk-text)}
+.cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:18px}
+.case{padding:24px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.case .eyebrow{color:var(--seal)}
+.case h3{font:400 1.45rem/1.15 var(--serif);margin:0}
+.case p{margin:0;color:#3B3E44}
+
+/* skills: an index sheet */
+.skills{padding:clamp(24px,5vw,44px)}
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:22px}
+.cols h3{font:500 .72rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--seal);margin:0 0 8px}
+.cols ul{list-style:none;margin:0;padding:0}
+.cols li{padding:7px 0;border-bottom:1px solid var(--rule)}
+.note{margin-top:26px;padding-top:18px;border-top:1px dashed var(--rule);display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start}
+.note p{margin:0;color:#3B3E44;max-width:46em}
+
+/* contact: the back-of-card band */
+.contact{background:var(--seal);color:var(--paper);padding:clamp(26px,5vw,48px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:end}
+.contact h2{color:var(--paper)}
+.contact .eyebrow{color:#F1D9D2}
+.rows{display:grid;gap:12px}
+.r{display:flex;justify-content:space-between;gap:12px;align-items:baseline;border-bottom:1px solid rgba(247,245,240,.35);padding-bottom:10px;flex-wrap:wrap}
+.r small{font:500 .72rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#F1D9D2}
+.r span,.r a{font-size:1.05rem;word-break:break-all}
+.copy{font:500 .75rem var(--mono);background:transparent;border:1px solid var(--paper);color:var(--paper);padding:3px 9px;cursor:pointer}
+.copy:hover{background:var(--paper);color:var(--seal)}
+footer{color:var(--desk-text);font:500 .78rem var(--mono);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:760px){
+  .about,.contact{grid-template-columns:1fr}
+  .cases,.cols{grid-template-columns:1fr}
+  .job{grid-template-columns:1fr;margin:0!important}
+  .job .when{text-align:left}
+  .flip{aspect-ratio:auto;height:250px}
+}
+@media (prefers-reduced-motion:reduce){.flip .inner{transition:none}}
+</style>
+</head>
+<body style="margin:0">
+
+<div class="desk">
+  <div class="nav"><span>savan balasara</span><nav aria-label="Sections"><a href="#about">About</a><a href="#work">Work</a><a href="#cases">Case studies</a><a href="#contact">Contact</a></nav></div>
+
+  <div class="hero">
+    <h1 class="sr">Savan Balasara, Senior Quality Analyst</h1>
+    <div class="flip" id="card" role="button" tabindex="0" aria-pressed="false" aria-label="Business card. Press to turn it over.">
+      <span class="inner">
+        <span class="face front">
+          <span><span class="nm">Savan Balasara</span><span class="role">Senior Quality Analyst</span></span>
+          <span class="bt"><span>work.savanb@gmail.com<br>+91 88493 93193<br>linkedin.com/in/savanb</span><span class="seal" aria-hidden="true">sb</span></span>
+        </span>
+        <span class="face back">
+          <p>Testing web, mobile and API products so your customers never meet the bug.</p>
+          <span class="meta"><span>AHMEDABAD, INDIA</span><span>OPEN TO SENIOR QA ROLES</span></span>
+        </span>
+      </span>
+    </div>
+    <span class="hint">Tap the card to turn it over</span>
+  </div>
+
+  <section class="sheet about" id="about">
+    <div><span class="eyebrow">About</span><h2>Quality, checked by hand and helped by AI.</h2></div>
+    <div>
+      <p class="big">I've spent 5.5 years testing software the way customers use it: on the web, on Android and iOS, and through payment flows that can't afford mistakes.</p>
+      <p>I started on a multi-currency digital wallet, tested card and PayPal payments at Tech Mahindra, moved into API testing and automation, and now set up the QA function at Tark Technologies.</p>
+      <p>I use Claude and ChatGPT to write test scenarios and test data faster. I review everything they produce before it reaches a test run.</p>
+      <div class="facts">
+        <div><b>5.5+</b><span>years in QA</span></div>
+        <div><b>4</b><span>companies</span></div>
+        <div><b>Web · Android · iOS · API</b><span>platforms tested</span></div>
+        <div><b>SaaS · POS · FinTech · EdTech</b><span>domains</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stack" id="work">
+    <div class="head"><span class="eyebrow">Experience</span><h2>Where I've worked</h2></div>
+    <article class="sheet job">
+      <div><h3>Senior Quality Analyst</h3><p class="co">Tark Technologies</p></div><div class="when">May 2025 – Present</div>
+      <ul><li>Own end-to-end regression for a SaaS retail ecosystem: POS web, mobile apps and online ordering.</li>
+      <li>Set up the test architecture, QA standards and procedures for a new QA function.</li>
+      <li>Lead smoke, regression and UAT cycles, checking every flow from cart to completed order.</li></ul>
+    </article>
+    <article class="sheet job">
+      <div><h3>Senior Quality Analyst</h3><p class="co">Optimus Web Solution</p></div><div class="when">May 2024 – Apr 2025</div>
+      <ul><li>Built automated test cases in Robot Framework and ran automation reviews.</li>
+      <li>API testing with Postman on EdTech and Immigration SaaS products.</li></ul>
+    </article>
+    <article class="sheet job">
+      <div><h3>Test Engineer</h3><p class="co">Tech Mahindra Limited</p></div><div class="when">Jan 2022 – Jan 2024</div>
+      <ul><li>Tested web and mobile payment apps, including security testing of card and PayPal processing.</li>
+      <li>Accessibility and end-to-end testing in Scrum teams, with defects tracked in MTT and Jira.</li></ul>
+    </article>
+    <article class="sheet job">
+      <div><h3>Quality Analyst</h3><p class="co">Lodestone Software Service</p></div><div class="when">Apr 2021 – Jan 2022</div>
+      <ul><li>Tested a multi-currency digital wallet with peer-to-peer transfers on Android and iOS.</li></ul>
+    </article>
+  </section>
+
+  <section id="cases">
+    <div class="cases-head"><span class="eyebrow">Selected work</span><h2>Case studies</h2></div>
+    <div class="cases">
+      <article class="sheet case"><span class="eyebrow">Retail SaaS · Tark</span><h3>One order, three apps</h3><p>The POS, the mobile app and the ordering site all touch the same order. I test the full journey from cart to completed order on each one before every release, including staff alerts.</p></article>
+      <article class="sheet case"><span class="eyebrow">Payments · Tech Mahindra</span><h3>Payments that must not fail</h3><p>Card and PayPal processing on web and mobile, with transaction integrity and security testing at the centre of every test cycle.</p></article>
+      <article class="sheet case"><span class="eyebrow">Process · Tark</span><h3>Building QA from zero</h3><p>There was no QA process when I joined. I set up the test architecture, standards and procedures that the team now works with.</p></article>
+      <article class="sheet case"><span class="eyebrow">EdTech · Optimus Web</span><h3>APIs first</h3><p>Tested EdTech and Immigration SaaS APIs in Postman and automated repeat checks in Robot Framework, so UI testing could focus on what users see.</p></article>
+    </div>
+  </section>
+
+  <section class="sheet skills" id="skills">
+    <span class="eyebrow">Toolkit</span><h2>Skills</h2>
+    <div class="cols">
+      <div><h3>Testing</h3><ul><li>Functional &amp; regression</li><li>Smoke, sanity &amp; UAT</li><li>API testing</li><li>Mobile: Android, iOS</li><li>Cross-browser</li><li>Accessibility &amp; security</li></ul></div>
+      <div><h3>Tools</h3><ul><li>Selenium</li><li>Robot Framework</li><li>Postman</li><li>Jira</li><li>TestRail</li><li>Asana</li></ul></div>
+      <div><h3>AI in QA</h3><ul><li>Claude &amp; Claude Code</li><li>ChatGPT</li><li>Scenario generation</li><li>Test data generation</li><li>Testing LLM features</li><li>Prompting for QA</li></ul></div>
+    </div>
+    <div class="note"><span class="seal" aria-hidden="true">✓</span><p>My rule for AI: it drafts, I decide. Nothing an AI writes reaches a test run until I've checked it against the requirement.</p></div>
+  </section>
+
+  <section class="sheet contact" id="contact">
+    <div><span class="eyebrow">Contact</span><h2>Have a release that needs a second pair of eyes?</h2></div>
+    <div class="rows">
+      <div class="r"><small>Email</small><span id="em">work.savanb@gmail.com</span><button class="copy" id="copy-email">Copy</button></div>
+      <div class="r"><small>Phone</small><span>+91 88493 93193</span></div>
+      <div class="r"><small>LinkedIn</small><a href="https://www.linkedin.com/in/savanb/" target="_blank" rel="noopener">linkedin.com/in/savanb</a></div>
+      <div class="r"><small>Based in</small><span>Ahmedabad, Gujarat · open to remote</span></div>
+    </div>
+  </section>
+
+  <footer><span>© 2026 Savan Balasara</span><span>MCA · BCA · English, Hindi, Gujarati</span></footer>
+</div>
+
+<script>
+const card=document.getElementById('card');
+const turn=()=>card.setAttribute('aria-pressed',card.getAttribute('aria-pressed')!=='true');
+card.addEventListener('click',turn);
+card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();turn()}});
+const btn=document.getElementById('copy-email');
+btn.addEventListener('click',()=>{
+  const done=t=>{btn.textContent=t;setTimeout(()=>btn.textContent='Copy',1500)};
+  const sel=()=>{const r=document.createRange();r.selectNodeContents(document.getElementById('em'));const s=getSelection();s.removeAllRanges();s.addRange(r);done('Selected')};
+  try{navigator.clipboard.writeText('work.savanb@gmail.com').then(()=>done('Copied'),sel)}catch(e){sel()}
+});
+</script>
+</body>
+</html>
